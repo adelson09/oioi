@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-home',
@@ -11,17 +12,28 @@ export class HomePage {
   @ViewChild('email') email;
   @ViewChild('senha') senha;
 
-  constructor(private firebaseAuthentication: FirebaseAuthentication) { }
+  constructor(public router : Router,
+              public fire : AngularFireAuth){
+  }
 
-  login(){
-
+  logar(){
+    this.fire.auth.signInWithEmailAndPassword(this.email.value,this.senha.value)
+      .then(()=>{
+        console.log('Logado com sucesso');
+        this.router.navigate(['/list']);
+      })
+      .catch(()=>{
+        console.log('Login Inválido');
+      })
   }
 
   cadastrar(){
-    this.firebaseAuthentication
-    .createUserWithEmailAndPassword(this.email.value, this.senha.value)
-      .then(resp=>{ console.log('Cadastrado com Sucesso'); })
-        .catch(resp=>{ console.log('Erro ao Cadastrar'); });
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
+    .then(()=> {
+      console.log("Cadastrado com sucesso!");
+    }).catch(()=>{
+      console.log("Usuário inválido");
+    })
   }
 
 }

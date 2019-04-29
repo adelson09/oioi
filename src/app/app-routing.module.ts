@@ -15,7 +15,10 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' }
+  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },  { path: 'lista-de-clientes', loadChildren: './lista-de-clientes/lista-de-clientes.module#ListaDeClientesPageModule' },
+  { path: 'logoff', loadChildren: './logoff/logoff.module#LogoffPageModule' },
+  { path: 'cadastro-de-cliente', loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' }
+
 ];
 
 @NgModule({
