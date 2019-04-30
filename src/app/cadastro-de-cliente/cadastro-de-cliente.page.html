@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <form #form="ngForm" (ngSubmit)="cadastrar()">
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrar()">
     <ion-list>
       <ion-item>
         <ion-label>Nome</ion-label>
@@ -20,6 +20,6 @@
             <ion-input formControlName="email" type="text"></ion-input>
           </ion-item>
     </ion-list>
-    <ion-button expand="full" type="submit" fill="outline" color="dark" >Cadastrar</ion-button>
+    <ion-button expand="full" type="submit" fill="outline" color="dark" (click)="cadastrar()">Cadastrar</ion-button>
   </form>
 </ion-content>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Cliente } from '../model/cliente';
 
 @Component({
   selector: 'app-cadastro-de-cliente',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class CadastroDeClientePage implements OnInit {
 
+  listaDeClientes: any[];
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots : true};
   formGroup : FormGroup;
@@ -36,5 +38,6 @@ export class CadastroDeClientePage implements OnInit {
       console.log('Erro ao Cadastrar')
     })
   }
+
 
 }
