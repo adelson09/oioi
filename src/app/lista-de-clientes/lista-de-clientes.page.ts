@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { Cliente } from '../model/cliente';
 import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-lista-de-clientes',
@@ -15,16 +16,17 @@ export class ListaDeClientesPage implements OnInit {
   settings = {timestampsInSnapshots: true};
 
 
-  constructor(public router : Router) {
-
-  }
+  constructor(public router : Router,
+              public loadingController: LoadingController) {
+                
+    }
 
   ngOnInit() {
     this.getList();
   }
 
   viewCliente(obj : Cliente){
-    this.router.navigate(['/cliente-view', {cliente : obj}]);
+    this.router.navigate(['/cliente-view', {'cliente' : obj.id}]);
   }
 
   getList(){
