@@ -33,7 +33,13 @@ export class AppComponent {
       title: 'Cadastro de Cliente',
       url: '/cadastro-de-cliente',
       icon: 'contacts'
+    },
+    {
+      title: 'Chat Room',
+      url: '/chat-room',
+      icon: 'contacts'
     }
+
   ];
 
   constructor(
