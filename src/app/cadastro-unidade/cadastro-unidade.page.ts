@@ -1,26 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Cliente } from '../model/cliente';
+import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-cadastro-de-cliente',
-  templateUrl: './cadastro-de-cliente.page.html',
-  styleUrls: ['./cadastro-de-cliente.page.scss'],
+  selector: 'app-cadastro-unidade',
+  templateUrl: './cadastro-unidade.page.html',
+  styleUrls: ['./cadastro-unidade.page.scss'],
 })
-export class CadastroDeClientePage implements OnInit {
+export class CadastroUnidadePage implements OnInit {
 
-  listaDeClientes: any[];
+  listaDeUnidades: any[];
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots : true};
   formGroup : FormGroup;
 
   constructor(public formBuilder : FormBuilder,
               public rauter : Router) {
-    this.formGroup = this.formBuilder.group({
-      nome : [''],
-      telefone : [''],
+                
+    this.formGroup= this.formBuilder.group({
+      nomeuni : [''],
+      endereco : [''],
+      cnpj : [''],
+      telefone1 : [''],
+      telefone2 : [''],
       email : [''],
     })
   }
@@ -29,14 +33,13 @@ export class CadastroDeClientePage implements OnInit {
   }
 
   cadastrar(){
-    let ref = this.firestore.collection('cliente')
+    let ref = this.firestore.collection('unidades')
     ref.add(this.formGroup.value)
     .then(()=>{
       console.log('Cadastrado com Sucesso');
       this.rauter.navigate(['/list']);
-    }).catch(err=>{
+    }).catch(()=>{
       console.log('Erro ao Cadastrar')
-      console.log(err)
     })
   }
 

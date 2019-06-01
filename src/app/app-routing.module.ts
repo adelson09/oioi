@@ -21,6 +21,10 @@ const routes: Routes = [
   { path: 'cadastro-de-cliente', loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' },
   { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' },
   { path: 'chat-room', loadChildren: './chat-room/chat-room.module#ChatRoomPageModule' },
+  { path: 'cadastro-unidade', loadChildren: './cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule' },
+  { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },  { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
+
+
   
 ];
 

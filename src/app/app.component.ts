@@ -38,6 +38,16 @@ export class AppComponent {
       title: 'Chat Room',
       url: '/chat-room',
       icon: 'contacts'
+    },
+    {
+      title: 'Cadastro de Unidade',
+      url: '/cadastro-unidade',
+      icon: 'contacts'
+    },
+    {
+      title: 'Lista de Unidades',
+      url: '/lista-de-unidade',
+      icon: 'body'
     }
 
   ];

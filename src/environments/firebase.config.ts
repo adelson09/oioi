@@ -1,8 +1,10 @@
 export const firebaseConfig = {
-    apiKey: "AIzaSyBh1XwpjY2w_WYx9d6OvFhFhJYlG9DT0E4",
-    authDomain: "projeto2-895af.firebaseapp.com",
-    databaseURL: "https://projeto2-895af.firebaseio.com",
-    projectId: "projeto2-895af",
-    storageBucket: "projeto2-895af.appspot.com",
-    messagingSenderId: "429058088500"
+  apiKey: "AIzaSyBjzy-s1ywZVZmIFSUf4eeG3Eh8ZuFZLlM",
+  authDomain: "communicativelibray.firebaseapp.com",
+  databaseURL: "https://communicativelibray.firebaseio.com",
+  projectId: "communicativelibray",
+  storageBucket: "communicativelibray.appspot.com",
+  messagingSenderId: "494202567122",
+  appId: "1:494202567122:web:48a23297bc7b0d7b"
   };
+

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista-de-Unidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let unidades of listaDeUnidades" >
+      <ion-card-header>
+          <ion-card-subtitle>{{unidades.nomeuni}}</ion-card-subtitle>
+          <ion-card-subtitle>{{unidades.endereco}}</ion-card-subtitle>
+          <ion-card-subtitle>{{unidades.cnpj}}</ion-card-subtitle>
+          <ion-card-subtitle>{{unidades.telefone1}}</ion-card-subtitle>
+          <ion-card-subtitle>{{unidades.telefone2}}</ion-card-subtitle>
+        <ion-card-subtitle>{{unidades.email}}</ion-card-subtitle>
+        
+      </ion-card-header>
+  
+    <ion-icon name="share-alt" size="large" (click)="viewUnidades(unidades)"></ion-icon>
+    <ion-icon name="trash" size="large" (click)="remove(unidades)"></ion-icon>
+  
+  </ion-card>
+  
+  
+  </ion-content>
