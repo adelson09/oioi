@@ -21,7 +21,7 @@ export class CadastroDeClientePage implements OnInit {
     this.formGroup = this.formBuilder.group({
       nome : [''],
       telefone : [''],
-      email : [''],
+      email : ['']
     })
   }
 

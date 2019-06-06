@@ -1,31 +1,51 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <div class="center">
     <ion-title>
-      Home
+      COMMUNICATIVE LIBRARY
     </ion-title>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <!--blackground -->
+  <div class="fd-login">
+      <!--logo-->
+      <div class="center padding-top-10-percent">
+        <img src="assets/imgs/logo.png" class="logo-login">
+      </div>
+      <div class="padding-40">
+        <ion-list>    
+          <ion-item class="bg-transparent no-padding mg-top-5">
+            <ion-label  class="snow bold">E-mail:</ion-label>
+            <ion-input type="text" class="bl" value="" #email></ion-input>
+          </ion-item>
+           
+          <ion-item class="bg-transparent no-padding mg-top-5">
+              <ion-label fixed class="snow bold">Senha:</ion-label>
+              <ion-input type="password" #senha></ion-input>
+          </ion-item>
+          
+        </ion-list>
+      </div>
 
-  <ion-list>
 
-    <ion-item>
-      <ion-label fixed>E-mail</ion-label>
-      <ion-input type="text" value="" #email></ion-input>
-    </ion-item>
-  
-    <ion-item>
-      <ion-label fixed>Senha</ion-label>
-      <ion-input type="password" #senha></ion-input>
-    </ion-item>
-  
-  </ion-list>
+        <div class="center mg-top-20">
+        <!-- <button ion-button full (click)="login()">Entrar</button> -->
+        <ion-button color="primary outline" (click)="logar()">Entrar</ion-button>
+        
+        <!-- <button ion-button full (click)="cadastrar()" outline>Novo Usuário</button> -->
+        <ion-button color="primary" (click)="cadastrar()">Cadastrar</ion-button>
+        </div>
 
-  <!-- <button ion-button full (click)="login()">Entrar</button> -->
-  <ion-button color="primary" (click)="logar()">Entrar</ion-button>
+        <div class="mg-top-30">
+            <!-- SUBTÍTULO -->
+            <p class="snow center light no-margin mg-top-5">
+              Os seus problemas acabaram!!
+            </p>
+        </div>
 
-  <!-- <button ion-button full (click)="cadastrar()" outline>Novo Usuário</button> -->
-  <ion-button color="primary" (click)="cadastrar()">Novo Usuário</ion-button>
 
+  </div>
 </ion-content>

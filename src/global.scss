@@ -72,4 +72,57 @@
     --ion-color-light-contrast-rgb: 0,0,0;
     --ion-color-light-shade: #d7d8da;
     --ion-color-light-tint: #f5f6f9;
+
+
+    //aling
+    .center{
+      text-align: center
+    }
+
+    //Margin
+    .no-margin {
+      margin: 0px
+    }
+    .mg-top-5 {
+      margin-top: 5px;
+    }
+    .mg-top-10 {
+      margin-top: 10px;
+    }
+    .mg-top-20 {
+      margin-top: 20px;
+    }
+    .mg-top-30 {
+      margin-top: 30px;
+    }
+    .mg-top-40 {
+      margin-top: 40px;
+    }
+
+    //Padding
+    .no-padding {
+      padding: 0px
+    }
+    .padding-40 {
+      padding: 40px;
+      opacity: 0.6;
+    
+    }
+    .padding-top-10-percent {
+      padding-top: 10%
+    }
+    .padding-top-30 {
+      padding-top: 30px
+    }
+
+    //Font style
+    .bold {
+      font-weight: 700
+    }
+    .light {
+      font-weight: 300
+    }
+
+    
+
   }

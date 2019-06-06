@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class LogoffPage {
 
-  constructor(public fire : AngularFireAuth,
-              public router : Router) {
+  constructor(public fire: AngularFireAuth,
+    public router: Router) {
 
-                this.fire.auth.signOut().then(()=>{
-                  this.router.navigate(['/home']);
-                }).catch(()=>{
-                  this.router.navigate(['/list']);
-                })
-               }
+    this.fire.auth.signOut().then(() => {
+      this.router.navigate(['/home']);
+    }).catch(() => {
+      this.router.navigate(['/list']);
+    })
+  }
 
 }
