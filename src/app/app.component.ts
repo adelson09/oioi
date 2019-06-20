@@ -49,6 +49,11 @@ export class AppComponent {
       url: '/lista-de-unidade',
       icon: 'body'
     }
+    ,{
+      title: 'Profile',
+      url: '/profile',
+      icon: 'list'
+    }
 
   ];
 

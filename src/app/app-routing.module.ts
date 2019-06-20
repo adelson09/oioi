@@ -22,7 +22,11 @@ const routes: Routes = [
   { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' },
   { path: 'chat-room', loadChildren: './chat-room/chat-room.module#ChatRoomPageModule' },
   { path: 'cadastro-unidade', loadChildren: './cadastro-unidade/cadastro-unidade.module#CadastroUnidadePageModule' },
-  { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },  { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
+  { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },
+  { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
+  
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+
 
 
   

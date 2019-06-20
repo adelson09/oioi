@@ -35,37 +35,27 @@
     <ion-slide>
       <div>
         <span>Questões</span>
-        <ion-searchbar aria-placeholder="Busca assunto "  disabled = " true " > </ion-searchbar >
-        <ion-item>
-          <ion-label class="">E-mail</ion-label>
-          <ion-input type="text" value="" #email1></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>Senha</ion-label>
-          <ion-input type="password" value="" #senha1></ion-input>
-        </ion-item>
-
-        <ion-button color="primary" (click)="cadastrar()" fill="outline" color="dark">Cadastrar</ion-button>
+        <ion-searchbar aria-placeholder="Busca assunto "  disabled = " true " > </ion-searchbar >           
+   <div> <span>Seleciona a buscar por materia</span></div>
+          <select >
+            <option selected>Materias</option>
+            <option> Português</option>
+            <option>Matematica</option>
+            <option>Geografia</option>
+            <option>Historia</option>
+            <option>Ciência</option>
+         </select>
+         <div><ion-button color="primary" (click)="logar()" fill="outline" color="dark">Buscar</ion-button>
+         </div>
       </div>
+       
 
     </ion-slide>
     <ion-slide>
         <div>
-            <span>Chat</span>
+          
   
-            <ion-item>
-                <ion-label class="">E-mail22</ion-label>
-                <ion-input type="text" value="" #email2></ion-input>
-
-            </ion-item>
-            
-            <ion-item>
-                <ion-label fixed>Senha22</ion-label>
-                <ion-input type="password" value="" #senha></ion-input>
-            </ion-item>
-  
-            <ion-button color="primary" (click)="logar()" fill="outline" color="dark">Entrar</ion-button>
+            <ion-button color="primary" (click)="logar()" fill="outline" color="dark">Entrar no Chat</ion-button>
   
           </div>
     </ion-slide>
