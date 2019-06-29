@@ -12,6 +12,8 @@ import { firebaseConfig } from '../environments/firebase.config';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { EnderecoService } from './services/endereco.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,13 +24,15 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireAuth,
+    EnderecoService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -26,14 +26,10 @@ export class HomePage {
         console.log('Login Inválido');
       })
   }
-
-  cadastrar(){
-    this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
-    .then(()=> {
-      console.log("Cadastrado com sucesso!");
-    }).catch(()=>{
-      console.log("Usuário inválido");
-    })
+  
+ cadastrar(){
+      this.router.navigate(['/cadastro-de-cliente']);
+    
   }
 
 }

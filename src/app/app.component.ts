@@ -40,11 +40,6 @@ export class AppComponent {
       icon: 'contacts'
     },
     {
-      title: 'Cadastro de Unidade',
-      url: '/cadastro-unidade',
-      icon: 'contacts'
-    },
-    {
       title: 'Lista de Unidades',
       url: '/lista-de-unidade',
       icon: 'body'
