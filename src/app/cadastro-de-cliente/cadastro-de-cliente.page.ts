@@ -17,6 +17,8 @@ import { EnderecoService } from '../services/endereco.service';
 export class CadastroDeClientePage implements OnInit {
 
 
+
+  router: any;
   listaDeClientes: any[];
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
@@ -58,17 +60,20 @@ export class CadastroDeClientePage implements OnInit {
     this.service.getEndereco(this.formGroup.value['cep']) //this.service.getEndereco(this.formGroup.value['cep'])
       .subscribe(response => {
         console.log(response);
+
+        this.formGroup.controls['rua'].setValue(response.logradouro);
+        this.formGroup.controls['bairro'].setValue(response.bairro);
+        this.formGroup.controls['cidade'].setValue(response.localidade);
+        this.formGroup.controls['estado'].setValue(response.uf);
+        this.formGroup.controls['complemento'].setValue(response.complemento);
+
       });
 
 
   }
-
+     
 
   ngOnInit() {
-  }
-
-  logForm() {
-    console.log(this.formGroup.value)
   }
 
   cadastrar() {
@@ -82,6 +87,10 @@ export class CadastroDeClientePage implements OnInit {
         console.log(err)
       })
   }
+  voltar(){
+    this.rauter.navigate(['/home']);
+  
+}
 
 
 }

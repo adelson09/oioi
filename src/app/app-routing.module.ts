@@ -23,10 +23,9 @@ const routes: Routes = [
   { path: 'chat-room', loadChildren: './chat-room/chat-room.module#ChatRoomPageModule' },
   { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },
   { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
-  
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
 
+ 
 
 
   

@@ -30,7 +30,7 @@ export class ClienteViewPage implements OnInit {
    form(){
      this.formGroup = this.formBuilder.group({
        nome : [this.cliente.nome],
-       telefone : [this.cliente.telefone],
+       tel : [this.cliente.tel],
        email : [this.cliente.email],
      });
    }

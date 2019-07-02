@@ -24,30 +24,30 @@ export class AppComponent {
     },{
       title: 'Lista de Clientes',
       url: '/lista-de-clientes',
-      icon: 'body'
+      icon: 'clipboard'
     },{
       title: 'Logoff',
       url: '/logoff',
-      icon: 'walk'
+      icon: 'exit'
     },{
       title: 'Cadastro de Cliente',
       url: '/cadastro-de-cliente',
-      icon: 'contacts'
+      icon: 'person-add'
     },
     {
       title: 'Chat Room',
       url: '/chat-room',
-      icon: 'contacts'
+      icon: 'chatboxes'
     },
     {
       title: 'Lista de Unidades',
       url: '/lista-de-unidade',
-      icon: 'body'
+      icon: 'keypad'
     }
     ,{
       title: 'Profile',
       url: '/profile',
-      icon: 'list'
+      icon: 'person'
     }
 
   ];

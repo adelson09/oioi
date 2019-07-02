@@ -10,10 +10,10 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="formGroup" (ngSubmit)="cadastrar()">
+  <form [formGroup]="formGroup"  (ngSubmit)="buscaCEP()" >
     <ion-list>
       <ion-radio-group data-target-id="cpfOuCnpj">
-        
+
         <ion-list-header style="font-size:20px;">
           <ion-label>Tipo de Pessoa </ion-label>
         </ion-list-header>
@@ -21,28 +21,28 @@
           <ion-col>
             <ion-item>
               <ion-label>Física</ion-label>
-              <ion-radio  formControlName="fisica" slot="start" value="s" checked></ion-radio>
+              <ion-radio formControlName="fisica" slot="start" value="s" checked></ion-radio>
             </ion-item>
           </ion-col>
           <ion-col>
             <ion-item>
               <ion-label>jurídica</ion-label>
-              <ion-radio  formControlName="juridica" slot="start" onclick="checked" value="n"></ion-radio>
+              <ion-radio formControlName="juridica" slot="start" onclick="checked" value="n"></ion-radio>
             </ion-item>
           </ion-col>
         </ion-row>
       </ion-radio-group>
       <ion-item>
         <ion-label>CPF:</ion-label>
-        <ion-input formControlName="cpf" type="text"  placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '999.999.999-99', len:14}"></ion-input>
+        <ion-input formControlName="cpf" type="text" placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '999.999.999-99', len:14}"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label>CNPJ:</ion-label>
-          <ion-input formControlName="cnpj" type="text"  placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '99.999.999/9999-99', len:18}"></ion-input>
-        </ion-item>
+        <ion-label>CNPJ:</ion-label>
+        <ion-input formControlName="cnpj" type="text" placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '99.999.999/9999-99', len:18}"></ion-input>
+      </ion-item>
       <ion-item>
         <ion-label>Nome:</ion-label>
-        <ion-input formControlName="nome" type="text"  ></ion-input>
+        <ion-input formControlName="nome" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Sobrenome:</ion-label>
@@ -50,7 +50,7 @@
       </ion-item>
       <ion-item>
         <ion-label>Sexo:</ion-label>
-        <ion-select  formControlName="sexo" >
+        <ion-select formControlName="sexo">
           <ion-select-option value="f">Feminino</ion-select-option>
           <ion-select-option value="m">Masculino</ion-select-option>
         </ion-select>
@@ -65,7 +65,7 @@
       </ion-item>
       <ion-item>
         <ion-label>Nascimento</ion-label>
-        <ion-datetime  formControlName="data" displayFormat="DD/MM/YYYY" placeholder="Selecione"></ion-datetime>
+        <ion-datetime formControlName="data" displayFormat="DD/MM/YYYY" placeholder="Selecione"></ion-datetime>
       </ion-item>
 
       <ion-list-header style="font-size:20px;">
@@ -73,7 +73,7 @@
       </ion-list-header>
 
       <ion-item>
-        <ion-label>Rua</ion-label>
+        <ion-label>Endereço:</ion-label>
         <ion-input formControlName="rua" type=text></ion-input>
       </ion-item>
       <ion-row>
@@ -86,19 +86,20 @@
         <ion-col>
           <ion-item>
             <ion-label>Complemento:</ion-label>
-            <ion-input formControlName="Complemento"  type=text></ion-input>
+            <ion-input formControlName="complemento" type=text></ion-input>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-label>CEP:</ion-label>
             <ion-input formControlName="cep" type=text placeholder="99999-999" [brmasker]="{form: formGroup.get('tel'), mask: '99999-999', len:9}"></ion-input>
+            <button ion-button block type="submit">Buscar</button>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-item>
         <ion-label>Bairro:</ion-label>
-        <ion-input formControlName="bairro"  type=text></ion-input>
+        <ion-input formControlName="bairro" type=text></ion-input>
       </ion-item>
       <ion-row>
         <ion-col>
@@ -124,18 +125,27 @@
         <ion-input formControlName="email" type="text"></ion-input>
       </ion-item>
       <ion-item>
-          <ion-label>Repetir Email:</ion-label>
-          <ion-input formControlName="repetiremail" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>Criar Senha</ion-label>
-            <ion-input formControlName="senha" type="text"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Repetir Senha:</ion-label>
-              <ion-input formControlName="repetirsenha" type="text"></ion-input>
-            </ion-item>
+        <ion-label>Repetir Email:</ion-label>
+        <ion-input formControlName="repetiremail" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Criar Senha</ion-label>
+        <ion-input formControlName="senha" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Repetir Senha:</ion-label>
+        <ion-input formControlName="repetirsenha" type="text"></ion-input>
+      </ion-item>
     </ion-list>
-    <ion-button expand="full" type="submit" fill="outline" color="dark" (click)="cadastrar()">Cadastrar</ion-button>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button type="submit" color="primary" (click)="voltar()">Voltar</ion-button>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col>
+        <ion-button type="submit" color="success"  (click)="cadastrar()">Cadastrar</ion-button>
+      </ion-col>
+    </ion-row>
   </form>
 </ion-content>
