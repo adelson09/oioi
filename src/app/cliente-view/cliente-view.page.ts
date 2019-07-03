@@ -29,9 +29,28 @@ export class ClienteViewPage implements OnInit {
 
    form(){
      this.formGroup = this.formBuilder.group({
-       nome : [this.cliente.nome],
-       tel : [this.cliente.tel],
-       email : [this.cliente.email],
+      
+     fisica: [this.cliente.fisica],
+      juridica: [this.cliente.juridica],
+      cpf: [this.cliente.cpf],
+      cnpj: [this.cliente.cnpj],
+      nome: [this.cliente.nome],
+      sobrenome: [this.cliente.sobrenome],
+      sexo: [this.cliente.sexo],
+      tel: [this.cliente.tel],
+      cel: [this.cliente.cel],
+      data: [this.cliente.data],
+      rua: [this.cliente.rua],
+      numero: [this.cliente.numero],
+      complemento: [this.cliente.complemento],
+      cep: [this.cliente.cep],
+      bairro: [this.cliente.bairro],
+      cidade: [this.cliente.cidade],
+      estado: [this.cliente.estado],
+      email: [this.cliente.email],
+      repetiremail: [this.cliente.repetiremail],
+      senha: [this.cliente.senha],
+      repetirsenha: [this.cliente.repetirsenha],
      });
    }
 

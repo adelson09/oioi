@@ -1,5 +1,5 @@
-export class Cliente{
 
+export class Cliente{
     id : string;
     fisica: string;
     juridica: string;
@@ -27,8 +27,8 @@ export class Cliente{
     }
 
     // Dados do firebase
-    //setDados(obj : any){
-     //   this.nome = obj.nome;
-       // this.telefone = obj.telefone;
-       // this.email = obj.email;
+   // setDados(obj : any){
+      //  this.nome = obj.nome;
+        //this.telefone = obj.telefone;
+//this.email = obj.email;
     }

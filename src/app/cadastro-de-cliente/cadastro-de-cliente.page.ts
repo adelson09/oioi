@@ -15,9 +15,6 @@ import { EnderecoService } from '../services/endereco.service';
   styleUrls: ['./cadastro-de-cliente.page.scss'],
 })
 export class CadastroDeClientePage implements OnInit {
-
-
-
   router: any;
   listaDeClientes: any[];
   firestore = firebase.firestore();
