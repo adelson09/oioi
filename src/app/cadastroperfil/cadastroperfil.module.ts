@@ -5,12 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroPage } from './cadastro.page';
+import { CadastroperfilPage } from './cadastroperfil.page';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
-    component: CadastroPage
+    component: CadastroperfilPage
   }
 ];
 
@@ -19,8 +20,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
   ],
-  declarations: [CadastroPage]
+  declarations: [CadastroperfilPage]
 })
-export class CadastroPageModule {}
+export class CadastroperfilPageModule {}

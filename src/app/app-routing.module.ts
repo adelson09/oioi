@@ -15,7 +15,6 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'cadastro', loadChildren: './cadastro/cadastro.module#CadastroPageModule' },
   { path: 'lista-de-clientes', loadChildren: './lista-de-clientes/lista-de-clientes.module#ListaDeClientesPageModule' },
   { path: 'logoff', loadChildren: './logoff/logoff.module#LogoffPageModule' },
   { path: 'cadastro-de-cliente', loadChildren: './cadastro-de-cliente/cadastro-de-cliente.module#CadastroDeClientePageModule' },
@@ -23,7 +22,10 @@ const routes: Routes = [
   { path: 'chat-room', loadChildren: './chat-room/chat-room.module#ChatRoomPageModule' },
   { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },
   { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
+  { path: 'cadastroperfil', loadChildren: './cadastroperfil/cadastroperfil.module#CadastroperfilPageModule' },
+  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },  { path: 'perfil-view', loadChildren: './perfil-view/perfil-view.module#PerfilViewPageModule' },
+
+
 
  
 

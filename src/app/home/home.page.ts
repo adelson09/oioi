@@ -27,9 +27,22 @@ export class HomePage {
       })
   }
   
- cadastrar(){
-      this.router.navigate(['/cadastro-de-cliente']);
-    
+  cadastrar(){
+    this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
+    .then(()=> {
+      console.log("Cadastrado com sucesso!");
+    }).catch(()=>{
+      console.log("Usuário inválido");
+    })
   }
 
+  facebook(){
+    window.open("https://pt-br.facebook.com/",'_system', 'location=yes');
+  }
+  instagram(){
+    window.open("https://www.instagram.com/?hl=pt-br",'_system', 'location=yes');
+  }
+  twitter(){
+    window.open("https://twitter.com/login?lang=pt",'_system', 'location=yes');
+  }
 }

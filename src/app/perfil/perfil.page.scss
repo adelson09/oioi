@@ -1,0 +1,25 @@
+/* Esconde o input */
+input[type='file'] {
+    display: none
+  }
+  
+  /* Aparência que terá o seletor de arquivo */
+  .perfilx {
+
+    --background: url(../../assets/imgs/person.png) no-repeat;
+    /* --background: url(../../assets/imgs/person.png) 0 0/100% 100% no-repeat;  */
+  }
+
+  .perfil{
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.tags{
+text-align: center;
+
+
+}

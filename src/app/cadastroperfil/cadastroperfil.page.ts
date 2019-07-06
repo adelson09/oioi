@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { Router } from '@angular/router';
-import { ViewChild } from '@angular/core';
 import * as firebase from 'firebase';
 import { FormGroup } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  selector: 'app-cadastroperfil',
+  templateUrl: './cadastroperfil.page.html',
+  styleUrls: ['./cadastroperfil.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class CadastroperfilPage implements OnInit {
 
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots : true};
@@ -30,17 +28,16 @@ export class ProfilePage implements OnInit {
   }
 
   entrar(){
-    let ref = this.firestore.collection('profile')
+    let ref = this.firestore.collection('cadastroperfil')
     ref.add(this.formGroup.value)
     .then(()=>{
       console.log('Entrada do Perfil com sucesso');
-      this.rauter.navigate(['/list']);
+      this.rauter.navigate(['/perfil']);
     }).catch(err=>{
       console.log('Erro ao Cadastrar')
       console.log(err)
     })
   }
-
 
 
 

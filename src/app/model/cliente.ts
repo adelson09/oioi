@@ -1,5 +1,6 @@
 
 export class Cliente{
+ 
     id : string;
     fisica: string;
     juridica: string;
@@ -27,8 +28,29 @@ export class Cliente{
     }
 
     // Dados do firebase
-   // setDados(obj : any){
-      //  this.nome = obj.nome;
-        //this.telefone = obj.telefone;
-//this.email = obj.email;
+       setDados(obj : any){
+       this.id = obj.id;
+        this.fisica = obj.fisica;
+        this.juridica = obj.juridica;
+        this.cpf = obj.cpf;
+        this.cnpj = obj.cnpj;
+        this.nome = obj.nome;
+        this.sobrenome = obj.sobrenome;
+        this.sexo = obj.sexo;
+        this.tel = obj.tel;
+        this.cel = obj.cel;
+        this.data = obj.data;
+        this.rua = obj.rua;
+        this.numero = obj.numero;
+        this.complemento = obj.complemento;
+        this.cep = obj.cep;
+        this.bairro = obj.bairro;
+        this.cidade = obj.cidade;
+        this.estado = obj.estado;
+        this.email = obj.email;
+        this.repetiremail = obj.repetiremail;
+        this.senha = obj.senha;
+        this.repetirsenha = obj.repetirsenha;
     }
+
+}

@@ -45,9 +45,14 @@ export class AppComponent {
       icon: 'keypad'
     }
     ,{
-      title: 'Profile',
-      url: '/profile',
-      icon: 'person'
+      title: 'Cadastro de Perfil',
+      url: '/cadastroperfil',
+      icon: 'clipboard'
+    },
+    {
+      title: 'Perfil',
+      url: '/perfil',
+      icon: 'list'
     }
 
   ];
