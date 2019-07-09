@@ -31,16 +31,17 @@ export class PerfilPage implements OnInit {
 
     this.idUsuario = this.firebaseauth.auth.currentUser.uid;
 
-   this.downloadFoto();
+   //this.downloadFoto();
 
-    let ref = this.firestore.collection('perfil/').doc(this.idUsuario)
+    let ref = this.firestore.collection('cliente').doc(this.idUsuario)
     ref.get().then(doc => {
+      this.perfil.id = doc.id;
       this.perfil.setDados(doc.data());
       console.log(this.perfil);
 
+    }).catch(err=>{
+      console.log(err)
     });
-
-
 
   });
     }
@@ -54,5 +55,17 @@ export class PerfilPage implements OnInit {
         })
       }
 
-}
+      cancelar() {
+        this.fire.auth.signOut().then(() => {
+          this.router.navigate(['/home']);
+        }).catch(() => {
+          this.router.navigate(['/list']);
+        })
+      }
+
+      atualizarP() {
+        this.router.navigate(['/perfil-view']);
+      }
+      }
+
 

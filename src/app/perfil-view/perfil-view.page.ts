@@ -14,7 +14,8 @@ import { Router } from '@angular/router';
 })
 export class PerfilViewPage implements OnInit {
 
-  idUsuario: string;
+  idUsuario : string;
+  usuarioEmail : string;
   perfil: Perfil = new Perfil();
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
@@ -26,23 +27,27 @@ export class PerfilViewPage implements OnInit {
     public firebaseauth: AngularFireAuth,
     public loadingController: LoadingController,
     public router: Router) {
+
  this.form();
     this.firebaseauth.authState.subscribe(obj => {
       this.idUsuario = this.firebaseauth.auth.currentUser.uid;
+      this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
+      console.log(this.idUsuario);
+      console.log(this.usuarioEmail);
 
-      let ref = this.firestore.collection('perfil/').doc(this.idUsuario)
+      let ref = this.firestore.collection('cliente').doc(this.idUsuario)
       ref.get().then(doc => {
+        console.log(doc.data())
+        
         this.perfil.setDados(doc.data());
 
         this.formGroup.controls['nome'].setValue(this.perfil.nome);
         this.formGroup.controls['sobrenome'].setValue(this.perfil.sobrenome);
+        this.formGroup.controls['cel'].setValue(this.perfil.cel);
         this.formGroup.controls['email'].setValue(this.perfil.email);
       });
 
     });
-
-   
-
   }
 
   form() {
@@ -50,7 +55,9 @@ export class PerfilViewPage implements OnInit {
       nome: [],
       email: [],
       cel: [],
-  
+      sobrenome:[],
+      cidade:[],
+      
     });
   }
 
@@ -58,9 +65,7 @@ export class PerfilViewPage implements OnInit {
     this.downloadFoto();
   }
 
-
-
-  atualizarP() {
+  atualizarperfil() {
     let ref = this.firestore.collection('perfil')
     ref.doc(this.idUsuario).set(this.formGroup.value)
       .then(() => {

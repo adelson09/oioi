@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,14 +14,25 @@ export class HomePage {
   @ViewChild('senha') senha;
 
   constructor(public router : Router,
-              public fire : AngularFireAuth){
+              public fire : AngularFireAuth,
+              public menuC : MenuController){
+              this.menuC.enable(false);
+              this.fire.authState.subscribe(
+      user => {
+        if (user) {
+          
+            this.router.navigate(['/list']);
+          }
+        }
+    );
+
   }
 
   logar(){
     this.fire.auth.signInWithEmailAndPassword(this.email.value,this.senha.value)
       .then(()=>{
         console.log('Logado com sucesso');
-        this.router.navigate(['/profile']);
+        this.router.navigate(['/perfil']);
       })
       .catch(()=>{
         console.log('Login Inválido');
@@ -31,6 +43,7 @@ export class HomePage {
     this.fire.auth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
     .then(()=> {
       console.log("Cadastrado com sucesso!");
+      this.router.navigate(['/cadastro-de-cliente']);
     }).catch(()=>{
       console.log("Usuário inválido");
     })

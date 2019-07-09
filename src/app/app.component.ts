@@ -53,8 +53,12 @@ export class AppComponent {
       title: 'Perfil',
       url: '/perfil',
       icon: 'list'
+    },
+    {
+      title: 'Visualizar Perfil',
+      url: '/perfil-view',
+      icon: 'list'
     }
-
   ];
 
   constructor(
@@ -76,14 +80,13 @@ export class AppComponent {
     this.firebaseauth.authState
     .subscribe(
       user => {
-        if (user) {
-          this.router.navigate(['/list']);
-          } else {
+        if (!user) {
+          
             this.router.navigate(['/home']);
           }
       },
       () => {
-        this.router.navigate(['/list']);
+        //this.router.navigate(['/list']);
       }
     );
 

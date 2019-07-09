@@ -4,11 +4,9 @@ export class Perfil{
     id : string;
     nome: string
     sobrenome:  string;
-    cel: string;
-    bairro: string;
-    cidade: string;
-    estado: string;
+    cel: string;;
     email: string;
+    cidade: string;
    
     constructor(){   
     }
@@ -19,10 +17,8 @@ export class Perfil{
         this.nome = obj.nome;
         this.sobrenome = obj.sobrenome;
         this.cel = obj.cel;
-        this.bairro = obj.bairro;
-        this.cidade = obj.cidade;
-        this.estado = obj.estado;
         this.email = obj.email;
+        this.cidade = obj.cidade;
     
     }
 

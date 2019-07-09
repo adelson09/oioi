@@ -6,53 +6,38 @@
 
 <ion-content>
   <ion-card>
-    <ion-card-header>
-      <img src="{{picture}}" class="perfil" />
-      <ion-card-title>{{perfil.nome}}</ion-card-title>
-      <ion-card-content>
-
-        <ion-row align-items-center>
-          <ion-col>
-
-            <ion-button color="purple" fill="outline" (click)="edt()">
-              <ion-icon name="contact"></ion-icon> Editar Perfil </ion-button>
-          </ion-col>
-          <ion-col>
-            <ion-button color="purple" fill="outline" (click)="localization()">
-              <ion-icon name="localizer"></ion-icon> Localização </ion-button>
-
-          </ion-col>
-          <ion-col>
-            <ion-button color="purple" fill="outline" (click)="logoff()">
-              <ion-icon name="log-out"></ion-icon> Logoff </ion-button>
-
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card-header>
+    <img src="{{imagem}}">
+  <ion-item>
+      <input type="file" (change)="enviaArquivo($event)" />
+    </ion-item>
   </ion-card>
 
   <form [formGroup]="formGroup">
     <ion-list>
 
       <ion-item>
-        <ion-label floating>Nome</ion-label>
+        <ion-label floating>Nome: </ion-label>
         <ion-input formControlName="nome"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Sobrenome</ion-label>
+        <ion-label floating>Sobrenome: </ion-label>
         <ion-input formControlName="sobrenome"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Celular</ion-label>
+        <ion-label floating>Celular:</ion-label>
         <ion-input formControlName="cel"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Email</ion-label>
+        <ion-label floating>Email:</ion-label>
         <ion-input formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cidade:</ion-label>
+        <ion-input formControlName="cidade"></ion-input>
       </ion-item>
 
     </ion-list>
@@ -62,7 +47,7 @@
       <ion-button type="submit" color="primary" (click)="cancelar()">Cancelar</ion-button>
     </ion-col>
     <ion-col>
-      <ion-button type="submit" color="success" (click)="atualizarP()">Atualizar</ion-button>
+      <ion-button type="submit" color="success" (click)="atualizarperfil()">Atualizar</ion-button>
     </ion-col>
 
   </ion-row>

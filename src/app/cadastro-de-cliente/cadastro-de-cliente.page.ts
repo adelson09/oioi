@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from 'selenium-webdriver/http';
 import { Endereco } from '../model/endereco';
 import { EnderecoService } from '../services/endereco.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-cadastro-de-cliente',
@@ -19,11 +20,19 @@ export class CadastroDeClientePage implements OnInit {
   listaDeClientes: any[];
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
+  idUsuario : string = "";
   private formGroup: FormGroup;
 
   constructor(public formBuilder: FormBuilder,
     public rauter: Router,
-    public service: EnderecoService) {
+    public service: EnderecoService,
+    public fire : AngularFireAuth) {
+      
+      this.fire.authState.subscribe(obj=>{
+        this.idUsuario = this.fire.auth.currentUser.uid;
+        console.log(this.idUsuario); // pega o ID
+        //this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
+      });
 
     this.formGroup = this.formBuilder.group({
       fisica: ['', Validators.required],
@@ -43,11 +52,7 @@ export class CadastroDeClientePage implements OnInit {
       bairro: [''],
       cidade: [''],
       estado: [''],
-      email: ['', Validators.required],
-      repetiremail: ['', Validators.required],
-      senha: ['', Validators.required],
-      repetirsenha: ['', Validators.required],
-
+     
     })
   }
 
@@ -74,8 +79,8 @@ export class CadastroDeClientePage implements OnInit {
   }
 
   cadastrar() {
-    let ref = this.firestore.collection('cliente')
-    ref.add(this.formGroup.value)
+    let ref = this.firestore.collection('cliente').doc(this.idUsuario)
+    ref.set(this.formGroup.value)
       .then(() => {
         console.log('Cadastrado com Sucesso');
         this.rauter.navigate(['/cadastroperfil']);
