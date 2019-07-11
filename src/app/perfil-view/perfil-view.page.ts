@@ -70,7 +70,7 @@ export class PerfilViewPage implements OnInit {
     ref.doc(this.idUsuario).set(this.formGroup.value)
       .then(() => {
         this.toast('Atualizado com Sucesso');
-        this.router.navigate(['/perfil']);
+        this.router.navigate(['perfil']);
         this.loadingController.dismiss();
       }).catch(() => {
         this.toast('Erro ao Atualizar')

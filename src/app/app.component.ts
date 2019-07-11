@@ -13,9 +13,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'LOGIN',
       url: '/home',
-      icon: 'home'
+      icon: 'key'
     },
     {
       title: 'List',
@@ -58,7 +58,14 @@ export class AppComponent {
       title: 'Visualizar Perfil',
       url: '/perfil-view',
       icon: 'list'
+    ,
+    },
+    {
+      title: 'Home',
+      url: '/index',
+      icon: 'home'
     }
+
   ];
 
   constructor(

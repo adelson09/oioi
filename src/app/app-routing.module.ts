@@ -24,6 +24,7 @@ const routes: Routes = [
   { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
   { path: 'cadastroperfil', loadChildren: './cadastroperfil/cadastroperfil.module#CadastroperfilPageModule' },
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },  { path: 'perfil-view', loadChildren: './perfil-view/perfil-view.module#PerfilViewPageModule' },
+  { path: 'index', loadChildren: './index/index.module#IndexPageModule' },
 
 
 

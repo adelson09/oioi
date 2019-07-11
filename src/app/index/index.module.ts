@@ -5,13 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PerfilViewPage } from './perfil-view.page';
-import { ReactiveFormsModule } from '@angular/forms';
+import { IndexPage } from './index.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: PerfilViewPage
+    component: IndexPage
   }
 ];
 
@@ -20,9 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [PerfilViewPage]
+  declarations: [IndexPage]
 })
-export class PerfilViewPageModule {}
+export class IndexPageModule {}

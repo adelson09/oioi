@@ -16,7 +16,7 @@
 
       <ion-card-title>{{perfil.nome}}</ion-card-title>
       <ion-card-subtitle>{{perfil.sobrenome}}</ion-card-subtitle>
-      <ion-card-subtitle>{{perfil.email}}</ion-card-subtitle>
+      <ion-card-subtitle>{{usuarioEmail}}</ion-card-subtitle>
       <ion-card-subtitle>{{perfil.cel}}</ion-card-subtitle>
       <ion-card-subtitle>{{perfil.cidade}}</ion-card-subtitle>
 
@@ -28,7 +28,7 @@
     <ion-row align-items-center>
       <ion-col>
 
-        <ion-button color="purple" fill="outline" (click)="atualizaP()">
+        <ion-button color="purple" fill="outline" (click)="edt()">
           <ion-icon name="contact"></ion-icon> Editar Perfil </ion-button>
       </ion-col>
       <ion-col>
