@@ -20,19 +20,22 @@ export class CadastroDeClientePage implements OnInit {
   listaDeClientes: any[];
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
-  idUsuario : string = "";
+  idUsuario: string = "";
   private formGroup: FormGroup;
+
+  juridica = 'none'
+  fisica = 'block'
 
   constructor(public formBuilder: FormBuilder,
     public rauter: Router,
     public service: EnderecoService,
-    public fire : AngularFireAuth) {
-      
-      this.fire.authState.subscribe(obj=>{
-        this.idUsuario = this.fire.auth.currentUser.uid;
-        console.log(this.idUsuario); // pega o ID
-        //this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
-      });
+    public fire: AngularFireAuth) {
+
+    this.fire.authState.subscribe(obj => {
+      this.idUsuario = this.fire.auth.currentUser.uid;
+      console.log(this.idUsuario); // pega o ID
+      //this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
+    });
 
     this.formGroup = this.formBuilder.group({
       fisica: ['', Validators.required],
@@ -52,8 +55,9 @@ export class CadastroDeClientePage implements OnInit {
       bairro: [''],
       cidade: [''],
       estado: [''],
-     
+
     })
+
   }
 
 
@@ -73,12 +77,27 @@ export class CadastroDeClientePage implements OnInit {
 
 
   }
-     
+  showFilter(){
+    if(this.juridica=='none'){ 
+      this.juridica = 'block'
+      this.fisica = 'none'
+    }else{ 
+    this.juridica = 'none'
+    this.fisica = 'block'}
+  }
+
 
   ngOnInit() {
   }
-
   cadastrar() {
+ if (this.fisica=="block" )
+ this.cadastrarcpf()
+ if (this.juridica=="block" )
+ this.cadastrarcnpj()
+
+  }
+
+  cadastrarcpf() {
     let ref = this.firestore.collection('cliente').doc(this.idUsuario)
     ref.set(this.formGroup.value)
       .then(() => {
@@ -89,10 +108,21 @@ export class CadastroDeClientePage implements OnInit {
         console.log(err)
       })
   }
-  voltar(){
+  cadastrarcnpj() {
+    let ref = this.firestore.collection('empresa').doc(this.idUsuario)
+    ref.set(this.formGroup.value)
+      .then(() => {
+        console.log('Cadastrado com Sucesso');
+        this.rauter.navigate(['/cadastroperfil']);
+      }).catch(err => {
+        console.log('Erro ao Cadastrar')
+        console.log(err)
+      })
+  }
+  voltar() {
     this.rauter.navigate(['/home']);
-  
-}
+
+  }
 
 
 }

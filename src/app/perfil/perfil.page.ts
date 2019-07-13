@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class PerfilPage implements OnInit {
 
 
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+
   }
   idUsuario: string;
   usuarioEmail:string;

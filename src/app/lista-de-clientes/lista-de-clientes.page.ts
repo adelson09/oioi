@@ -14,9 +14,10 @@ export class ListaDeClientesPage implements OnInit {
   listaDeClientes : Cliente[] = [];
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
+  
 
-
-  constructor(public router : Router,
+  constructor(public rauter: Router,
+    public router : Router,
               public loadingController: LoadingController) {
                 
     }
@@ -42,8 +43,7 @@ export class ListaDeClientesPage implements OnInit {
     });
   }
 
-  
-  remove(obj : Cliente){
+   remove(obj : Cliente){
     var ref = firebase.firestore().collection("cliente");
     ref.doc(obj.id).delete()
       .then(()=>{
@@ -52,6 +52,17 @@ export class ListaDeClientesPage implements OnInit {
       }).catch(()=>{
         console.log('Erro ao atualizar');
       })
+  } 
+  
+  encaminhar(id : string) {
+
+
+
+
+
+
+    this.rauter.navigate(['chat-room',{'id' : id}]);
+
   }
 
 }

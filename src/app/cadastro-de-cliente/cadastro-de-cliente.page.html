@@ -18,27 +18,27 @@
           <ion-label>Tipo de Pessoa </ion-label>
         </ion-list-header>
         <ion-row>
-          <ion-col>
-            <ion-item>
+          <ion-col >
+            <ion-item >
               <ion-label>Física</ion-label>
-              <ion-radio formControlName="fisica" slot="start" value="s" checked></ion-radio>
+              <ion-radio (click)="showFilter()" formControlName="fisica" slot="start" value="s" checked></ion-radio>
             </ion-item>
           </ion-col>
-          <ion-col>
+          <ion-col >
             <ion-item>
               <ion-label>jurídica</ion-label>
-              <ion-radio formControlName="juridica" slot="start" onclick="checked" value="n"></ion-radio>
+              <ion-radio (click)="showFilter()" formControlName="juridica" slot="start" onclick="checked" value="n"></ion-radio>
             </ion-item>
           </ion-col>
         </ion-row>
       </ion-radio-group>
-      <ion-item>
+      <ion-item [ngStyle]="{'display':fisica}">
         <ion-label>CPF:</ion-label>
         <ion-input formControlName="cpf" type="text" placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '999.999.999-99', len:14}"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>CNPJ:</ion-label>
-        <ion-input formControlName="cnpj" type="text" placeholder="999.999.999-99" [brmasker]="{form: formGroup.get('cpf'), mask: '99.999.999/9999-99', len:18}"></ion-input>
+      <ion-item [ngStyle]="{'display':juridica}">
+        <ion-label >CNPJ:</ion-label>
+        <ion-input formControlName="cnpj" type="text" placeholder="99.999.999/9999-99" [brmasker]="{form: formGroup.get('cnpj'), mask: '99.999.999/9999-99', len:18}"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Nome:</ion-label>

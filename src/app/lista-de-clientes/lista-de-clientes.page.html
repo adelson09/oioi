@@ -10,7 +10,7 @@
 <ion-content>
   <ion-card *ngFor="let cliente of listaDeClientes" >
     <ion-card-header>
-        <ion-card-title>{{cliente.nome}}</ion-card-title>
+        <ion-card-title>{{cliente.id}} {{cliente.nome}}</ion-card-title>
       <ion-card-subtitle>{{cliente.email}}</ion-card-subtitle>
       
     </ion-card-header>
@@ -21,8 +21,10 @@
 
 
   <ion-icon name="share-alt" size="large" (click)="viewCliente(cliente)"></ion-icon>
+  
   <ion-icon name="trash" size="large" (click)="remove(cliente)"></ion-icon>
 
+ <ion-icon type="submmit" name="paper-plane" size="large" (click)="encaminhar(cliente.id)"></ion-icon>
 </ion-card>
 
 

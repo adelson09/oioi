@@ -14,6 +14,7 @@ export class ListPage implements OnInit {
   firestore = firebase.firestore();
   settings = { timestampsInSnapshots: true };
   idUsuario : string = "";
+  picture: string = "../../assets/imgs/person.png";
 
   constructor(
     private router : Router,
@@ -25,7 +26,7 @@ export class ListPage implements OnInit {
    
   }
   ngOnInit() {
-
+    this.downloadFoto();
     
       this.fire.authState.subscribe(obj=>{
         this.idUsuario = this.fire.auth.currentUser.uid;
@@ -34,14 +35,6 @@ export class ListPage implements OnInit {
         //this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
       });
 
-  }
-
-  proximo(){
-    
-  }
-
-  anterior(){
-    
   }
 
   verificaClienteCadastro(){
@@ -60,5 +53,15 @@ export class ListPage implements OnInit {
         })
     }
   
+    downloadFoto() {
+      let ref = firebase.storage().ref()
+        .child(`perfil/${this.idUsuario}.jpg`);
+  
+      ref.getDownloadURL().then(url => {
+        this.picture = url;
+      })
+    }
+  }
+  
 
-}
+
