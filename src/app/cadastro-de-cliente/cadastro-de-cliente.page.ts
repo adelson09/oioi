@@ -90,10 +90,9 @@ export class CadastroDeClientePage implements OnInit {
   ngOnInit() {
   }
   cadastrar() {
- if (this.fisica=="block" )
+
  this.cadastrarcpf()
- if (this.juridica=="block" )
- this.cadastrarcnpj()
+
 
   }
 

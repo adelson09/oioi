@@ -22,3 +22,26 @@ input[type='file'] {
 .tags{
 text-align: center;
 }
+
+.conf{
+
+  height: 40px;
+  width: 40px;
+  position: absolute;
+
+}
+
+.tabs{
+  background-color: rgb(170, 32, 170);
+}
+
+ion-header {
+  background-color: purple;
+  ion-icon {
+       color:white;
+
+  }
+}
+.header{
+  background-color: rgb(170, 32, 170);
+}

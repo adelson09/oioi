@@ -1,32 +1,36 @@
 <ion-header>
-  <img src="{{picture}}" class="perfil" />
-  <ion-searchbar showCancelButton="always"></ion-searchbar>
-</ion-header>
-
-<ion-content>
+    <img src="{{picture}}" class="perfil" />
+    <ion-toolbar color="primary">
+        <ion-buttons slot="secondary">
+            <ion-button>
+                <ion-icon name="more"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
     <ion-tabs>
         <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="schedule">
-            <ion-icon name="calendar"></ion-icon>
-            <ion-label>Home</ion-label>
-            <ion-badge>6</ion-badge>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="speakers">
-            <ion-icon name="contacts"></ion-icon>
-            <ion-label>Contatos</ion-label>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="map">
-            <ion-icon name="map"></ion-icon>
-            <ion-label>Mapas</ion-label>
-          </ion-tab-button>
-      
-          <ion-tab-button tab="about">
-            <ion-icon name="information-circle"></ion-icon>
-            <ion-label>Configurações</ion-label>
-          </ion-tab-button>
+            <ion-tab-button tab="schedule">
+                <ion-icon name="contacts"></ion-icon>
+                <ion-label>Contatos</ion-label>
+                <ion-badge>6</ion-badge>
+            </ion-tab-button>
+
+            <ion-tab-button tab="speakers">
+                <ion-icon name="mail-unread"></ion-icon>
+                <ion-label>Conversas</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button tab="map">
+                <ion-icon name="construct"></ion-icon>
+                <ion-label>Configurações</ion-label>
+            </ion-tab-button>
         </ion-tab-bar>
-      </ion-tabs>
+    </ion-tabs>
+
+</ion-header>
+
+
+<ion-content>
+
 
 </ion-content>

@@ -44,7 +44,6 @@ export class PerfilViewPage implements OnInit {
         this.formGroup.controls['nome'].setValue(this.perfil.nome);
         this.formGroup.controls['sobrenome'].setValue(this.perfil.sobrenome);
         this.formGroup.controls['cel'].setValue(this.perfil.cel);
-        this.formGroup.controls['email'].setValue(this.perfil.email);
       });
 
     });
@@ -53,7 +52,6 @@ export class PerfilViewPage implements OnInit {
   form() {
     this.formGroup = this.formBuilder.group({
       nome: [],
-      email: [],
       cel: [],
       sobrenome:[],
       cidade:[],

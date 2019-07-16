@@ -15,9 +15,11 @@ export class ChatRoomPage {
   idSender : string;
   idUser : string;
   messages : Sender[] = [];
-
+  input;
 
   constructor(public router: Router,public activatedRoute: ActivatedRoute,public firebaseauth : AngularFireAuth,){
+
+    
 
     this.idSender = this.activatedRoute.snapshot.paramMap.get('id');
     
@@ -25,18 +27,20 @@ export class ChatRoomPage {
     this.firebaseauth.authState.subscribe(obj=>{
       this.idUser = this.firebaseauth.auth.currentUser.uid;
       this.carregarMensage();
-
+      console.log(this.idSender);
+      console.log(this.idUser);
     });
 
   }
 
   carregarMensage(){
-    var ref = firebase.firestore().collection("message").where('para','==',this.idSender);
-    ref.get().then(query=>{
-      query.forEach(doc=>{
+    var ref = firebase.firestore().collection("cliente").doc(this.idUser).collection("mensagem")
+    ref.onSnapshot(query=>{
+      query.docChanges().forEach(doc => {
         let s = new Sender();
-        s.setObjFirebase(doc.data());
+        s.setObjFirebase(doc.doc.data());
         this.messages.push(s);
+        console.log(doc.doc.data().mensagem)
       });
       
     });
@@ -44,11 +48,21 @@ export class ChatRoomPage {
 
   enviaMensagem(){
 
-    firebase.firestore().collection("message").add(
-      {'data' : '','mensagem' : 'oi','de' : this.idUser, 'para' : this.idSender}
+   
+
+    firebase.firestore().collection("cliente").doc(this.idUser).collection('mensagem').add(
+      {'data' : '','mensagem' : this.input,'de' : this.idUser, 'para' : this.idSender}
     
     ).then(query=>{
     })
+
+    firebase.firestore().collection("cliente").doc(this.idSender).collection('mensagem').add(
+      {'data' : '','mensagem' : this.input,'de' : this.idUser, 'para' : this.idSender}
+    
+    ).then(query=>{
+    })
+
+    this.input = "";
   }
 
 /*
@@ -82,6 +96,10 @@ export class ChatRoomPage {
     firebase.firestore().collection("mensagem/").doc(this.idSender).collection(this.idUser).add({'mensagem' : 'oi'}).then(query=>{
     })
   }
-*/
 
+*ngIf="msg.from == friend.username && msg.to == 'me' "
+
+*ngIf="msg.from == 'me' && msg.to == friend.username"
+
+img class="friend-img" [src]="Util.pathAvatar(friend.avatar)" alt="">*/
 }

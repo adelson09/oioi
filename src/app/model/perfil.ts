@@ -5,7 +5,6 @@ export class Perfil{
     nome: string
     sobrenome:  string;
     cel: string;;
-    email: string;
     cidade: string;
    
     constructor(){   
@@ -17,7 +16,6 @@ export class Perfil{
         this.nome = obj.nome;
         this.sobrenome = obj.sobrenome;
         this.cel = obj.cel;
-        this.email = obj.email;
         this.cidade = obj.cidade;
     
     }
