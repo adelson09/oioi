@@ -5,6 +5,15 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { ListPage } from './list.page';
+import { Routes } from '@angular/router';
+import { IndexPage } from '../index/index.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: IndexPage
+  }
+];
 
 @NgModule({
   imports: [

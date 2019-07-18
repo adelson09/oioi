@@ -11,12 +11,13 @@ input[type='file'] {
   }
 
   .perfil{
-    height: 70px;
-    width: 70px;
-    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
     margin-top: 10px;
-    margin-right: auto;
+    margin-right: 10px;
     border-radius: 50%;
+
 }
 
 .tags{
@@ -31,17 +32,17 @@ text-align: center;
 
 }
 
-.tabs{
-  background-color: rgb(170, 32, 170);
+.iconeschat{
+  color: rgb(187, 31, 226);
 }
 
 ion-header {
-  background-color: purple;
+  background-color: white;
   ion-icon {
-       color:white;
+       color:rgb(187, 31, 226);
 
   }
 }
 .header{
-  background-color: rgb(170, 32, 170);
+  background-color:white;
 }

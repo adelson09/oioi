@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { MenuController, IonSlides } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -26,12 +26,13 @@ export class ListPage implements OnInit {
    
   }
   ngOnInit() {
-    this.downloadFoto();
+   
     
       this.fire.authState.subscribe(obj=>{
         this.idUsuario = this.fire.auth.currentUser.uid;
         console.log(this.idUsuario); // pega o ID
         this.verificaClienteCadastro();
+        this.downloadFoto();
         //this.usuarioEmail = this.firebaseauth.auth.currentUser.email;
       });
 
@@ -52,7 +53,11 @@ export class ListPage implements OnInit {
           this.router.navigate(['/cadastro-de-cliente']);
         })
     }
-  
+
+    caminhochat() {
+      this.router.navigate(['index']);
+    }
+    
     downloadFoto() {
       let ref = firebase.storage().ref()
         .child(`perfil/${this.idUsuario}.jpg`);
@@ -61,7 +66,39 @@ export class ListPage implements OnInit {
         this.picture = url;
       })
     }
+
+
+
+    slideOptsOne = {
+      initialSlide: 0,
+      slidesPerView: 1,
+      autoplay:true,
+      speed: 1000,
+     };
+  
+
+    slidesDidLoad(slides: IonSlides) {
+      slides.startAutoplay();
+    }
+
+
+
+    slides = [
+      {
+        img:'../assets/slides/1.png',
+        titulo:'Whey Protein Gold Standard',
+      },
+      {
+        img:'../assets/slides/2.jpg',
+        titulo:'Visivel',
+      },
+      {
+        img:'../assets/slides/3.jpg',
+        titulo:'Hi-Whey Protein',
+      }]
+
   }
   
+
 
 

@@ -38,8 +38,13 @@ export class ChatRoomPage {
     ref.onSnapshot(query=>{
       query.docChanges().forEach(doc => {
         let s = new Sender();
+
+        if(doc.doc.data().de==this.idSender || doc.doc.data().para==this.idSender){
         s.setObjFirebase(doc.doc.data());
         this.messages.push(s);
+        }
+        console.log(doc.doc.data().de)
+        console.log(doc.doc.data().para)
         console.log(doc.doc.data().mensagem)
       });
       

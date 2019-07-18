@@ -12,14 +12,19 @@ input[type='file'] {
   }
 
   .perfil{
-    height: 70px;
-    width: 70px;
-    margin-left: 10px;
+    height: 50px;
+    width: 50px;
+    margin-left: 5px;
     margin-top: 10px;
-    margin-right: auto;
+    margin-right: 10px;
     border-radius: 50%;
 }
 
 .tags{
 text-align: right;
+}
+
+.ion-slide{
+  display: block;
+  
 }
