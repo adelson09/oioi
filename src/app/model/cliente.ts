@@ -23,6 +23,7 @@ export class Cliente{
     repetiremail:string;
     senha: string;
     repetirsenha: string;
+    imagem : string;
 
     constructor(){   
     }

@@ -12,12 +12,14 @@ input[type='file'] {
   }
 
   .perfil{
+    text-align: center;
     height: 50px;
     width: 50px;
     margin-left: 5px;
     margin-top: 10px;
     margin-right: 10px;
     border-radius: 50%;
+    
 }
 
 .tags{
@@ -27,4 +29,10 @@ text-align: right;
 .ion-slide{
   display: block;
   
+}
+
+.cad{
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  font: outline;
+  text-align: center;
 }

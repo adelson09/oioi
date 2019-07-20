@@ -65,7 +65,17 @@ export class AppComponent {
       title: 'Home',
       url: '/index',
       icon: 'home'
-    }
+    },
+    {
+      title:'Matérias',
+      url:'/buscar-materia',
+      icon:'book'
+    },
+    {
+    title:'Formulário',
+    url:'/formulario',
+    icon:'paper'
+  }
 
   ];
 

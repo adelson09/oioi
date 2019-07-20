@@ -89,11 +89,15 @@ export class ListPage implements OnInit {
         titulo:'Whey Protein Gold Standard',
       },
       {
-        img:'../assets/slides/2.jpg',
+        img:'../assets/slides/2.png',
         titulo:'Visivel',
       },
       {
-        img:'../assets/slides/3.jpg',
+        img:'../assets/slides/4.png',
+        titulo:'Visivel',
+      },
+      {
+        img:'../assets/slides/3.png',
         titulo:'Hi-Whey Protein',
       }]
 

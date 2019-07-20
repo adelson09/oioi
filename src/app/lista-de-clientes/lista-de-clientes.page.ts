@@ -16,6 +16,8 @@ export class ListaDeClientesPage implements OnInit {
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
   idUser;
+  idUsuario : string = "";
+  picture: string = "../../assets/imgs/person.png";
 
   constructor(public rauter: Router,
     public router : Router,
@@ -46,7 +48,17 @@ export class ListaDeClientesPage implements OnInit {
         if(doc.id!=this.idUser){
         c.setDados(doc.data());
         c.id = doc.id;
-        this.listaDeClientes.push(c);
+
+        let ref = firebase.storage().ref().child(`perfil/${doc.id}.jpg`).getDownloadURL().then(url => {
+          c.imagem = url;
+          this.listaDeClientes.push(c);
+          
+        }).catch(err => {
+          c.imagem = "../../assets/imgs/person.png"
+          this.listaDeClientes.push(c);
+        })
+        
+        
       }
 
       });
@@ -64,6 +76,16 @@ export class ListaDeClientesPage implements OnInit {
         console.log('Erro ao atualizar');
       })
   } 
+
+  downloadFoto() {
+    let ref = firebase.storage().ref()
+      .child(`perfil/${this.idUsuario}.jpg`);
+
+    ref.getDownloadURL().then(url => {
+      this.picture = url;
+    })
+  }
+
   
   encaminhar(id : string) {
 

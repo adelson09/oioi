@@ -1,40 +1,23 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>
-      <img src="{{picture}}" class="perfil" />Communicative Library
+      <img src="{{picture}}" class="perfil" />Inicio
     </ion-title>
     <ion-buttons slot="secondary">
       <ion-button>
         <ion-icon src="{{picture}}" class="perfil" name="contact"></ion-icon>
       </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button color="secondary">
-        <ion-icon slot="icon-only" name="more"></ion-icon>        
-      <ion-select multiple="true" cancelText="Nah" okText="Okay!">
-        <ion-select-option value="bacon">Bacon</ion-select-option>
-        <ion-select-option value="olives">Black Olives</ion-select-option>
-        <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
-        <ion-select-option value="peppers">Green Peppers</ion-select-option>
-        <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
-        <ion-select-option value="onions">Onions</ion-select-option>
-        <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
-        <ion-select-option value="pineapple">Pineapple</ion-select-option>
-        <ion-select-option value="sausage">Sausage</ion-select-option>
-        <ion-select-option value="Spinach">Spinach</ion-select-option>
-      </ion-select>
-
+        <ion-icon slot="icon-only" name="more"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
-
+  
     <ion-slides pager="true" [options]="slideOptsOne ">
         <ion-slide *ngFor="let slide of slides">
           <div>
@@ -45,6 +28,10 @@
         </ion-slide>
       </ion-slides>
 
+  <ion-card-content class="cad bold">
+    Comece a utilizar nosso aplicativo para obter melhor experiência
+    abaixo tem a barra de navegação rápida para que você possa ir direto ao que deseja.
+  </ion-card-content>
 
   <ion-tabs>
     <ion-tab-bar slot="bottom">

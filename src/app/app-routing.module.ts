@@ -23,9 +23,25 @@ const routes: Routes = [
   { path: 'lista-de-unidades', loadChildren: './lista-de-unidades/lista-de-unidades.module#ListaDeUnidadesPageModule' },
   { path: 'unidades-view', loadChildren: './unidades-view/unidades-view.module#UnidadesViewPageModule' },
   { path: 'cadastroperfil', loadChildren: './cadastroperfil/cadastroperfil.module#CadastroperfilPageModule' },
-  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },  { path: 'perfil-view', loadChildren: './perfil-view/perfil-view.module#PerfilViewPageModule' },
+  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
+  { path: 'perfil-view', loadChildren: './perfil-view/perfil-view.module#PerfilViewPageModule' },
   { path: 'index', loadChildren: './index/index.module#IndexPageModule' },
-
+  { path: 'buscar-materia', loadChildren: './buscar-materia/buscar-materia.module#BuscarMateriaPageModule' },
+  { path: 'materias', loadChildren: './materias/materias.module#MateriasPageModule' },
+  { path: 'portugues', loadChildren: './portugues/portugues.module#PortuguesPageModule' },
+  { path: 'artes', loadChildren: './artes/artes.module#ArtesPageModule' },
+  { path: 'ingles', loadChildren: './ingles/ingles.module#InglesPageModule' },
+  { path: 'espanhol', loadChildren: './espanhol/espanhol.module#EspanholPageModule' },
+  { path: 'historia', loadChildren: './historia/historia.module#HistoriaPageModule' },
+  { path: 'geografia', loadChildren: './geografia/geografia.module#GeografiaPageModule' },
+  { path: 'biologia', loadChildren: './biologia/biologia.module#BiologiaPageModule' },
+  { path: 'filosofia', loadChildren: './filosofia/filosofia.module#FilosofiaPageModule' },
+  { path: 'sociologia', loadChildren: './sociologia/sociologia.module#SociologiaPageModule' },
+  { path: 'matematica', loadChildren: './matematica/matematica.module#MatematicaPageModule' },
+  { path: 'fisica', loadChildren: './fisica/fisica.module#FisicaPageModule' },
+  { path: 'quimica', loadChildren: './quimica/quimica.module#QuimicaPageModule' },
+  { path: 'conotacao', loadChildren: './conotacao/conotacao.module#ConotacaoPageModule' },
+  { path: 'formulario', loadChildren: './formulario/formulario.module#FormularioPageModule' },
 
 
  
