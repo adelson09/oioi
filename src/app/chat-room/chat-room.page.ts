@@ -13,6 +13,7 @@ import { Sender } from '../model/sender';
 export class ChatRoomPage {
 
   idSender : string;
+  nomeSender : string;
   idUser : string;
   messages : Sender[] = [];
   input;
@@ -22,6 +23,7 @@ export class ChatRoomPage {
     
 
     this.idSender = this.activatedRoute.snapshot.paramMap.get('id');
+    this.nomeSender = this.activatedRoute.snapshot.paramMap.get('nomeSend');
     
 
     this.firebaseauth.authState.subscribe(obj=>{
@@ -39,10 +41,10 @@ export class ChatRoomPage {
       query.docChanges().forEach(doc => {
         let s = new Sender();
 
-        if(doc.doc.data().de==this.idSender || doc.doc.data().para==this.idSender){
+       // if(doc.doc.data().de==this.idSender || doc.doc.data().para==this.idSender){
         s.setObjFirebase(doc.doc.data());
         this.messages.push(s);
-        }
+        //}
         console.log(doc.doc.data().de)
         console.log(doc.doc.data().para)
         console.log(doc.doc.data().mensagem)

@@ -87,14 +87,9 @@ export class ListaDeClientesPage implements OnInit {
   }
 
   
-  encaminhar(id : string) {
+  encaminhar(id : string, nome : string) {
 
-
-
-
-
-
-    this.rauter.navigate(['chat-room',{'id' : id}]);
+    this.rauter.navigate(['chat-room',{'id' : id, 'nomeSend' : nome}]);
 
   }
 
