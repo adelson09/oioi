@@ -35,7 +35,7 @@ export class PerfilViewPage implements OnInit {
       console.log(this.idUsuario);
       console.log(this.usuarioEmail);
 
-      let ref = this.firestore.collection('cliente').doc(this.idUsuario)
+      let ref = this.firestore.collection('perfil').doc(this.idUsuario)
       ref.get().then(doc => {
         console.log(doc.data())
         
@@ -44,6 +44,7 @@ export class PerfilViewPage implements OnInit {
         this.formGroup.controls['nome'].setValue(this.perfil.nome);
         this.formGroup.controls['sobrenome'].setValue(this.perfil.sobrenome);
         this.formGroup.controls['cel'].setValue(this.perfil.cel);
+        this.formGroup.controls['cidade'].setValue(this.perfil.cidade);
       });
 
     });

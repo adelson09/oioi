@@ -35,7 +35,7 @@ export class PerfilPage implements OnInit {
 
       this.downloadFoto();
 
-      let ref = this.firestore.collection('cliente').doc(this.idUsuario)
+      let ref = this.firestore.collection('perfil').doc(this.idUsuario)
       ref.get().then(doc => {
         this.perfil.id = doc.id;
         this.perfil.setDados(doc.data());

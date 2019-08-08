@@ -16,10 +16,9 @@
 
       <ion-card-title>{{perfil.nome}}</ion-card-title>
       <ion-card-subtitle>{{perfil.sobrenome}}</ion-card-subtitle>
-      <ion-card-subtitle>{{usuarioEmail}}</ion-card-subtitle>
       <ion-card-subtitle>{{perfil.cel}}</ion-card-subtitle>
       <ion-card-subtitle>{{perfil.cidade}}</ion-card-subtitle>
-
+      <ion-card-subtitle>{{usuarioEmail}}</ion-card-subtitle>
     </ion-card-header>
 
   </ion-card>
@@ -29,15 +28,18 @@
       <ion-col>
 
         <ion-button color="purple" fill="outline" (click)="edt()">
-          <ion-icon name="contact"></ion-icon> Editar Perfil </ion-button>
+          <ion-icon name="contact"></ion-icon> Editar Perfil
+        </ion-button>
       </ion-col>
       <ion-col>
         <ion-button color="purple" fill="outline" (click)="cancelar()">
-          <ion-icon name="log-out"></ion-icon> Logoff </ion-button>
+          <ion-icon name="log-out"></ion-icon> Logoff
+        </ion-button>
       </ion-col>
       <ion-col center>
         <ion-button color="purple" fill="outline" (click)="localization()">
-          <ion-icon name="localizer"></ion-icon> Localização </ion-button>
+          <ion-icon name="localizer"></ion-icon> Localização
+        </ion-button>
       </ion-col>
     </ion-row>
   </ion-card-content>
