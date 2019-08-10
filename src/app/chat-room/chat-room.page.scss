@@ -31,7 +31,7 @@ page-chat-room {
       }
     }
   
-  
+  //
     .me {
       .txt {
         display: inline;
@@ -46,13 +46,13 @@ page-chat-room {
         padding: 12px 10px;
       }
     }
-  
+
     .text-input {
       background-color: #fff;
       border-radius: 5px;
       padding: 5px;
     }
-  
+
   }
 
   .fd-login{
@@ -63,3 +63,18 @@ page-chat-room {
     background-position: center;
   }
   
+  .sender1{
+    margin-right: 200px;
+    background-color: #58D3F7;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+  .sender2{
+    margin-left: 200px;
+    background-color: #9FF781;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    margin-bottom: 1em;
+  }

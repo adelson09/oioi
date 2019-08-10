@@ -11,7 +11,7 @@
 
       <div *ngFor="let msg of messages">
 
-        <div class="sender" *ngIf="msg.de === idUser">
+        <div class="sender1" *ngIf="msg.de === idUser">
           <ion-grid>
             <ion-row>
               <h2>EU</h2>
@@ -22,9 +22,9 @@
           </ion-grid>
         </div>
 
-        <div class="me" *ngIf="msg.de === idSender">
+        <div class="sender2" *ngIf="msg.de === idSender">
           <ion-grid>
-            <ion-row col md 12>
+            <ion-row col-md-12>
               <h2>{{nomeSender}}</h2>
             </ion-row>
             <ion-row>
@@ -42,8 +42,8 @@
     <ion-textarea (keyup.enter)="doSend()" [(ngModel)]="input" placeholder="Enter your message" name="message">
     </ion-textarea>
     <ion-buttons end>
-      <button (click)="enviaMensagem()" ion-button icon-only>
-        <ion-icon name="send" color="light"></ion-icon>
+      <button slot="end" (click)="enviaMensagem()" ion-button icon-only>
+        <ion-icon  name="send" color="light"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>

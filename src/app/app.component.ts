@@ -28,7 +28,7 @@ export class AppComponent {
     },
     {
       title: 'Lista de Unidades',
-      url: '/lista-de-unidade',
+      url: '/lista-de-unidades',
       icon: 'clipboard',
     },
     {
@@ -47,9 +47,9 @@ export class AppComponent {
       icon: 'eye',
     },
     {
-      title: 'Listas',
+      title: 'Inicio',
       url: '/list',
-      icon: 'list',
+      icon: 'home',
     },
     {
       title: 'Chat Room',
@@ -64,7 +64,7 @@ export class AppComponent {
     {
       title: 'Home',
       url: '/index',
-      icon: 'home'
+      icon: ''
     },
     {
       title:'Matérias',
